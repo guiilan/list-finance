@@ -20,7 +20,6 @@ export class ModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data.finance)
     if(this.data.finance){
       this.data.finance.acoes.map(obj => {
         if(obj.valResgate > obj.calculoPercentual){

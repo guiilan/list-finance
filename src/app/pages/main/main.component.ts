@@ -20,7 +20,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.financeService.getFinances().subscribe((res) => {
       this.listFinance = res.response.data.listaInvestimentos
-      console.log(this.listFinance)
     })
   }
 
