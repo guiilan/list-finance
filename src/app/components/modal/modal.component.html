@@ -1,0 +1,23 @@
+<h2 *ngIf="valoresIndevidos.length == 0 && !modalVazio">Resgate Efetuado com Sucesso!</h2>
+<div class="sucess-card" *ngIf="valoresIndevidos.length == 0 && !modalVazio">
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="voltar()" >Novo Resgate</button>
+</div>
+
+
+<h2 *ngIf="valoresIndevidos.length > 0">Dados Inválidos!</h2>
+<span *ngIf="valoresIndevidos.length > 0">Você preencheu um ou mais campos com um valor acima do permitido:</span>
+<div *ngIf="valoresIndevidos.length > 0">
+    <div *ngFor="let acao of valoresIndevidos;">
+       <strong>{{acao.nome}}: </strong> <span>  O Valor não pode ser maior que {{acao.calculoPercentual | currency:'BRL'}}</span>
+    </div>
+</div>
+
+
+
+<h2 *ngIf="modalVazio">Dados Inválidos!</h2>
+<span *ngIf="modalVazio">Preencha Pelo Menos Um Campo</span>
+<div *ngIf="modalVazio">
+    <div *ngIf="modalVazio">
+        <button mat-raised-button color="primary" [mat-dialog-close]="true" >Fechar</button>
+    </div>
+</div>
