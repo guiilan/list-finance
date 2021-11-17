@@ -56,6 +56,7 @@ export class ResgateComponent implements OnInit {
   }
 
   confirm(){
+    this.totalResgate = 0
     this.financeDetail.acoes.map(obj => obj.valResgate ? this.totalResgate += obj.valResgate : null)
     this.dialog.open(ModalComponent,{
       data: {
